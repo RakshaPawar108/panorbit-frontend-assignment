@@ -1,3 +1,9 @@
+import { UserList } from "../../components/";
+
 export const LandingPage = () => {
-  return <div>Landing Page</div>;
+  return (
+    <div>
+      <UserList />
+    </div>
+  );
 };

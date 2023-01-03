@@ -5,6 +5,7 @@ export const getUsers = async (setUsers) => {
     const response = await fetchUsers();
     if (response.status === 200) {
       setUsers(response.data.users);
+      console.log(response)
     }
   } catch (err) {
     console.log(err);
