@@ -1,0 +1,3 @@
+.list-item-text:last-child {
+  border-bottom: none;
+}

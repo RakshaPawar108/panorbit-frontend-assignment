@@ -1,0 +1,11 @@
+.user-list {
+  width: 30rem;
+}
+
+.list-body:not(last-child) {
+  border-bottom: 1px solid #ccc;
+}
+
+.list-body:last-child {
+  border-bottom: none !important;
+}
