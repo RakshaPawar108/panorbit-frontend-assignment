@@ -25,6 +25,7 @@ export const UserList = () => {
               key={user.id}
               name={user.name}
               image={user.profilepicture}
+              userId={user.id}
             />
           ))}
         </Card.Body>

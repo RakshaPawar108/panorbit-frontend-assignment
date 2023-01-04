@@ -1,14 +1,18 @@
 import { Card, Image } from "react-bootstrap";
 import "./UserListItem.css";
+import { Link } from "react-router-dom";
 
-export const UserListItem = ({ name, image }) => {
+export const UserListItem = ({ name, image, userId }) => {
   return (
-    <Card.Text
+    <Link
+      className="list-item-link"
+      to={`${userId}`}
       style={{ borderBottom: "1px solid #ccc" }}
-      className="list-item-text"
     >
-      <Image src={image} roundedCircle={true} />
-      {name}
-    </Card.Text>
+      <Card.Text className="list-item-text">
+        <Image src={image} roundedCircle={true} />
+        {name}
+      </Card.Text>
+    </Link>
   );
 };
