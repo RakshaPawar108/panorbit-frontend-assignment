@@ -10,7 +10,7 @@ export const UserListItem = ({ name, image, userId }) => {
       style={{ borderBottom: "1px solid #ccc" }}
     >
       <Card.Text className="list-item-text">
-        <Image src={image} roundedCircle={true} />
+        <Image src={image} roundedCircle={true} className='image-circle-small' />
         {name}
       </Card.Text>
     </Link>

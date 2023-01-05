@@ -2,6 +2,7 @@ import { Image } from "react-bootstrap";
 import "./ProfilePage.css";
 import { DetailsDropdown, Navbar } from "../../components/";
 import { useParams } from "react-router-dom";
+import GoogleMapReact from "google-map-react";
 import data from "../../data/data.json";
 
 export const ProfilePage = () => {
@@ -13,6 +14,12 @@ export const ProfilePage = () => {
   };
 
   const currentUser = findUser(parseInt(currentUserId));
+  const defaultProps = {
+    center: [currentUser.address.geo.lat, currentUser.address.geo.lng],
+    zoom: 11,
+  };
+
+  const ReactMapComp = ({ text }) => <div>{text}</div>;
 
   return (
     <div className="main-wrapper">
@@ -27,7 +34,11 @@ export const ProfilePage = () => {
                 <p className="details-title">Profile</p>
               </div>
               <div className="details-dropdown-wrapper">
-                <Image roundedCircle src={currentUser.profilepicture} />
+                <Image
+                  className="image-circle-small"
+                  roundedCircle
+                  src={currentUser.profilepicture}
+                />
                 <DetailsDropdown name={currentUser.name} />
               </div>
             </div>
@@ -35,7 +46,11 @@ export const ProfilePage = () => {
               <div className="details-content-col1-wrapper">
                 <div className="details-personal-wrapper">
                   <div className="user-name-section">
-                    <Image roundedCircle src="abc" />
+                    <Image
+                      roundedCircle
+                      src={currentUser.profilepicture}
+                      className="image-circle-large"
+                    />
                     <p className="details-title">{currentUser.name}</p>
                   </div>
                   <div className="user-details-main-section">
@@ -68,7 +83,7 @@ export const ProfilePage = () => {
                 <div className="details-company-wrapper">
                   <div
                     className="user-name-section"
-                    style={{ paddingBottom: "2rem" }}
+                    style={{ marginTop: "4rem" }}
                   >
                     <p className="light-name">Company</p>
                   </div>
@@ -147,7 +162,20 @@ export const ProfilePage = () => {
                     </div>
                   </div>
                   <div className="map-wrapper">
-                    <Image src="abc" />
+                    <GoogleMapReact
+                      center={{
+                        lat: defaultProps.center[0],
+                        lng: defaultProps.center[1],
+                      }}
+                      defaultZoom={defaultProps.zoom}
+                      bootstrapURLKeys={{ key: "" }}
+                    >
+                      <ReactMapComp
+                        text="My Marker"
+                        lat={defaultProps.center[0]}
+                        lng={defaultProps.center[1]}
+                      />
+                    </GoogleMapReact>
                   </div>
                   <div className="latitude-longitude-wrapper">
                     <p className="lat-long-text">
