@@ -1,0 +1,240 @@
+.main-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar-wrapper {
+  display: flex;
+  width: 22%;
+  padding: 4rem 5.6rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* View Wrapper */
+.profile-wrapper {
+  display: flex;
+  width: 75%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-right: 8rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.page-wrapper {
+  display: flex;
+  width: 100%;
+  height: 88vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.details-section-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+/* DetailsTitleWrapper */
+.details-header-wrapper {
+  display: flex;
+  width: 100%;
+  height: 10%;
+  border-bottom: 1px solid var(--color-light);
+  padding-bottom: 2rem;
+}
+
+/* SectionWrapper3 */
+.details-title-wrapper {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.details-title {
+  margin-left: 0rem;
+  margin: 1rem;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #000;
+}
+
+/* SectionWrapper2 */
+.details-dropdown-wrapper {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.details-content-wrapper {
+  display: flex;
+  width: 100%;
+  margin-top: 5rem;
+  height: 90%;
+}
+
+/* DetailsContentWrapper1 */
+.details-content-col1-wrapper {
+  border-right: 1px solid var(--color-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 38%;
+}
+
+/* Details SubContent Wrapper 1 */
+.details-personal-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 65%;
+  margin-bottom: 1.4rem;
+}
+
+.user-name-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60%;
+}
+
+.user-details-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+  width: 100%;
+  height: 40%;
+}
+
+.detail-item {
+  margin-left: 0rem;
+  margin: 1rem;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #000;
+}
+
+.light-name {
+  margin: 1rem;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #ccc;
+}
+
+/* Details SubContent Wrapper 2 */
+.details-company-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 35%;
+  margin-top: 0rem;
+}
+
+/* Details Content Col2 Wrapper */
+.details-content-col2-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 62%;
+  margin-left: 3rem;
+}
+
+.details-address-name-wrapper {
+  height: 7%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.details-address-wrapper {
+  width: 90%;
+  margin-left: 5rem;
+  height: 93%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: -1.6rem;
+}
+
+.user-address-details-section {
+  width: 70%;
+  height: 36%;
+  margin-left: -1.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.address-details-section {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  width: 100%;
+  height: 40%;
+}
+
+.address-title-section {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  width: 25%;
+}
+
+.map-wrapper {
+  width: 100%;
+  height: 56%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: -1rem;
+}
+
+.latitude-longitude-wrapper {
+  width: 100%;
+  height: 4%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.lat-long-text {
+  margin: 0rem;
+  margin-right: 1rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #ccc;
+}
+
+.lat-long-num {
+  margin: 0rem;
+  margin-right: 2rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #000;
+}

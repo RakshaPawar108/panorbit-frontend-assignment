@@ -6,7 +6,7 @@ export const UserListItem = ({ name, image, userId }) => {
   return (
     <Link
       className="list-item-link"
-      to={`${userId}`}
+      to={`/${userId}`}
       style={{ borderBottom: "1px solid #ccc" }}
     >
       <Card.Text className="list-item-text">
