@@ -1,11 +1,46 @@
 .nav {
   display: flex;
   width: 100%;
-  background: red;
+  background: linear-gradient(
+    145deg,
+    rgba(61, 88, 201, 1) 0%,
+    rgba(111, 45, 200, 1) 100%
+  );
   height: 88vh;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   padding: 0rem 4.8rem;
   border-radius: 3rem;
+}
+
+.navbar-link {
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  padding: 2rem;
+  font-weight: 400;
+  color: oldlace;
+  cursor: pointer;
+  transition: all var(--speed);
+}
+
+.active {
+  color: #fff;
+}
+
+.line {
+  width: 70%;
+  height: 1px;
+  border-radius: 1px;
+  background: #dddddd;
+  display: flex;
+  align-self: center;
+}
+
+.navbar-link:hover,
+.navbar-link:focus {
+  color: #fff;
 }

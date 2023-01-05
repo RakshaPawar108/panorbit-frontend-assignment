@@ -2,7 +2,6 @@ import { Image } from "react-bootstrap";
 import "./ProfilePage.css";
 import { DetailsDropdown, Navbar } from "../../components/";
 import { useParams } from "react-router-dom";
-import GoogleMapReact from "google-map-react";
 import data from "../../data/data.json";
 
 export const ProfilePage = () => {
@@ -14,17 +13,11 @@ export const ProfilePage = () => {
   };
 
   const currentUser = findUser(parseInt(currentUserId));
-  const defaultProps = {
-    center: [currentUser.address.geo.lat, currentUser.address.geo.lng],
-    zoom: 11,
-  };
-
-  const ReactMapComp = ({ text }) => <div>{text}</div>;
 
   return (
     <div className="main-wrapper">
       <div className="navbar-wrapper" style={{ width: "22%" }}>
-        <Navbar />
+        <Navbar userId={currentUser.id} />
       </div>
       <div className="profile-wrapper">
         <div className="page-wrapper">
@@ -161,22 +154,7 @@ export const ProfilePage = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="map-wrapper">
-                    <GoogleMapReact
-                      center={{
-                        lat: defaultProps.center[0],
-                        lng: defaultProps.center[1],
-                      }}
-                      defaultZoom={defaultProps.zoom}
-                      bootstrapURLKeys={{ key: "" }}
-                    >
-                      <ReactMapComp
-                        text="My Marker"
-                        lat={defaultProps.center[0]}
-                        lng={defaultProps.center[1]}
-                      />
-                    </GoogleMapReact>
-                  </div>
+                  <div className="map-wrapper"></div>
                   <div className="latitude-longitude-wrapper">
                     <p className="lat-long-text">
                       Lat :
