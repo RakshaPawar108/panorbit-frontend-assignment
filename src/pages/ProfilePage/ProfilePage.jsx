@@ -1,79 +1,116 @@
-import { Container, Image } from "react-bootstrap";
+import { Image } from "react-bootstrap";
 import "./ProfilePage.css";
 import { DetailsDropdown, Navbar } from "../../components/";
+import { useParams } from "react-router-dom";
+import data from "../../data/data.json";
 
 export const ProfilePage = () => {
+  const params = useParams();
+
+  const currentUserId = params.userId;
+  const findUser = (userId) => {
+    return data.users.find((user) => user.id === userId);
+  };
+
+  const currentUser = findUser(parseInt(currentUserId));
+
   return (
-    <Container className="main-wrapper">
-      <Container className="navbar-wrapper" style={{ width: "22%" }}>
+    <div className="main-wrapper">
+      <div className="navbar-wrapper" style={{ width: "22%" }}>
         <Navbar />
-      </Container>
-      <Container className="profile-wrapper">
-        <Container className="page-wrapper">
-          <Container className="details-section-wrapper">
-            <Container className="details-header-wrapper">
-              <Container className="details-title-wrapper">
+      </div>
+      <div className="profile-wrapper">
+        <div className="page-wrapper">
+          <div className="details-section-wrapper">
+            <div className="details-header-wrapper">
+              <div className="details-title-wrapper">
                 <p className="details-title">Profile</p>
-              </Container>
-              <Container className="details-dropdown-wrapper">
-                <Image roundedCircle src="abc" />
-                <DetailsDropdown />
-              </Container>
-            </Container>
-            <Container className="details-content-wrapper">
-              <Container className="details-content-col1-wrapper">
-                <Container className="details-personal-wrapper">
-                  <Container className="user-name-section">
+              </div>
+              <div className="details-dropdown-wrapper">
+                <Image roundedCircle src={currentUser.profilepicture} />
+                <DetailsDropdown name={currentUser.name} />
+              </div>
+            </div>
+            <div className="details-content-wrapper">
+              <div className="details-content-col1-wrapper">
+                <div className="details-personal-wrapper">
+                  <div className="user-name-section">
                     <Image roundedCircle src="abc" />
-                    <p className="details-title">User Name</p>
-                  </Container>
-                  <Container className="user-details-section">
-                    <p className="detail-item">
-                      <span className="light-name">Username :</span> Abcd
-                    </p>
-                    <p className="detail-item">
-                      <span className="light-name">e-mail :</span>
-                    </p>
-                    <p className="detail-item">
-                      <span className="light-name">Phone : </span>
-                    </p>
-                    <p className="detail-item">
-                      <span className="light-name">Website :</span>
-                    </p>
-                  </Container>
-                </Container>
+                    <p className="details-title">{currentUser.name}</p>
+                  </div>
+                  <div className="user-details-main-section">
+                    <div className="user-details-title-section">
+                      <p className="detail-item">
+                        <span className="light-name">Username :</span>
+                      </p>
+                      <p className="detail-item">
+                        <span className="light-name">e-mail :</span>
+                      </p>
+                      <p className="detail-item">
+                        <span className="light-name">Phone : </span>
+                      </p>
+                      <p className="detail-item">
+                        <span className="light-name">Website :</span>
+                      </p>
+                    </div>
+                    <div
+                      className="user-details-filler-section"
+                      style={{ width: "60%" }}
+                    >
+                      <p className="detail-item">{currentUser.username}</p>
+                      <p className="detail-item">{currentUser.email}</p>
+                      <p className="detail-item">{currentUser.phone}</p>
+                      <p className="detail-item">{currentUser.website}</p>
+                    </div>
+                  </div>
+                </div>
                 <hr />
-                <Container className="details-company-wrapper">
-                  <Container className="user-name-section">
+                <div className="details-company-wrapper">
+                  <div
+                    className="user-name-section"
+                    style={{ paddingBottom: "2rem" }}
+                  >
                     <p className="light-name">Company</p>
-                  </Container>
-                  <Container className="user-details-section">
-                    <p className="detail-item">
-                      <span className="light-name">Name :</span> Abcd
-                    </p>
-                    <p className="detail-item">
-                      <span className="light-name">catchphrase :</span>
-                    </p>
-                    <p className="detail-item">
-                      <span className="light-name">bs : </span>
-                    </p>
-                  </Container>
-                </Container>
-              </Container>
-              <Container className="details-content-col2-wrapper">
-                <Container className="details-address-name-wrapper">
+                  </div>
+                  <div className="company-details-main-section">
+                    <div className="user-details-title-section">
+                      <p className="detail-item">
+                        <span className="light-name">Name :</span>
+                      </p>
+                      <p className="detail-item">
+                        <span className="light-name">catchphrase :</span>
+                      </p>
+                      <p
+                        className="detail-item light-name"
+                        style={{ marginTop: "4rem" }}
+                      >
+                        bs :
+                      </p>
+                    </div>
+                    <div className="user-details-filler-section">
+                      <p className="detail-item">{currentUser.company.name}</p>
+                      <p className="detail-item">
+                        {currentUser.company.catchPhrase}
+                      </p>
+                      <p className="detail-item">{currentUser.company.bs}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="details-content-col2-wrapper">
+                <div className="details-address-name-wrapper">
                   <p className="light-name">Address :</p>
-                </Container>
-                <Container
+                </div>
+                <div
                   className="details-address-wrapper"
                   style={{ marginLeft: "0" }}
                 >
-                  <Container
+                  <div
                     className="user-address-details-section"
-                    style={{ width: "80%", marginLeft: "-6rem" }}
+                    style={{ width: "80%", marginLeft: "-1.5rem" }}
                   >
-                    <Container className="address-details-section">
-                      <Container
+                    <div className="address-details-section">
+                      <div
                         className="address-title-section"
                         style={{ width: "40%" }}
                       >
@@ -89,26 +126,51 @@ export const ProfilePage = () => {
                         <p className="detail-item">
                           <span className="light-name">Zipcode : </span>
                         </p>
-                      </Container>
-                    </Container>
-                  </Container>
-                  <Container className="map-wrapper">
+                      </div>
+                      <div
+                        className="address-filler-section"
+                        style={{ width: "60%" }}
+                      >
+                        <p className="detail-item">
+                          {currentUser.address.street}
+                        </p>
+                        <p className="detail-item">
+                          {currentUser.address.suite}
+                        </p>
+                        <p className="detail-item">
+                          {currentUser.address.city}
+                        </p>
+                        <p className="detail-item">
+                          {currentUser.address.zipcode}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="map-wrapper">
                     <Image src="abc" />
-                  </Container>
-                  <Container className="latitude-longitude-wrapper">
+                  </div>
+                  <div className="latitude-longitude-wrapper">
                     <p className="lat-long-text">
-                      Lat :<span className="lat-long-num"> 123</span>
+                      Lat :
+                      <span className="lat-long-num">
+                        {" "}
+                        {currentUser.address.geo.lat}
+                      </span>
                     </p>
                     <p className="lat-long-text">
-                      Long :<span className="lat-long-num"> 456</span>
+                      Long :
+                      <span className="lat-long-num">
+                        {" "}
+                        {currentUser.address.geo.lng}
+                      </span>
                     </p>
-                  </Container>
-                </Container>
-              </Container>
-            </Container>
-          </Container>
-        </Container>
-      </Container>
-    </Container>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
