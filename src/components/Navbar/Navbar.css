@@ -32,12 +32,13 @@
 }
 
 .line {
-  width: 70%;
+  width: 65%;
   height: 1px;
   border-radius: 1px;
   background: #dddddd;
   display: flex;
-  align-self: center;
+  align-self: flex-end;
+  margin-right: 1.5rem;
 }
 
 .navbar-link:hover,
