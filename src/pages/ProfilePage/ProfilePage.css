@@ -168,13 +168,13 @@
 
 .details-address-wrapper {
   width: 90%;
-  margin-left: 5rem;
+  
   height: 93%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  margin-top: -1.6rem;
+  margin-top: 4rem;
 }
 
 .user-address-details-section {
@@ -211,7 +211,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  margin-top: -1rem;
+  margin-top: 3rem;
 }
 
 .latitude-longitude-wrapper {

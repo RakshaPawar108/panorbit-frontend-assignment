@@ -4,7 +4,7 @@ import { DetailsDropdown, Navbar } from "../../components/";
 
 export const ProfilePage = () => {
   return (
-    <Container className='main-wrapper'>
+    <Container className="main-wrapper">
       <Container className="navbar-wrapper" style={{ width: "22%" }}>
         <Navbar />
       </Container>
@@ -16,6 +16,7 @@ export const ProfilePage = () => {
                 <p className="details-title">Profile</p>
               </Container>
               <Container className="details-dropdown-wrapper">
+                <Image roundedCircle src="abc" />
                 <DetailsDropdown />
               </Container>
             </Container>
@@ -63,10 +64,19 @@ export const ProfilePage = () => {
                 <Container className="details-address-name-wrapper">
                   <p className="light-name">Address :</p>
                 </Container>
-                <Container className="details-address-wrapper">
-                  <Container className="user-address-details-section">
+                <Container
+                  className="details-address-wrapper"
+                  style={{ marginLeft: "0" }}
+                >
+                  <Container
+                    className="user-address-details-section"
+                    style={{ width: "80%", marginLeft: "-6rem" }}
+                  >
                     <Container className="address-details-section">
-                      <Container className="address-title-section">
+                      <Container
+                        className="address-title-section"
+                        style={{ width: "40%" }}
+                      >
                         <p className="detail-item">
                           <span className="light-name">Street : </span>
                         </p>
